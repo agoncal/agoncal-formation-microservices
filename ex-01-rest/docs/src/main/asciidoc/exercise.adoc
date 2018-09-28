@@ -1,0 +1,40 @@
+= Formation Microservices
+Exercise 01 - REST
+
+== Structure du projet
+
+== Generator API
+
+L'API Generator genère un nombre aléatoire.
+
+=== Création
+
+Aller sur https://start.spring.io pour générer un projet Spring Boot. Pour avoir plus d'options, cliquez sur `Switch to the full version` puis saisissez les données suivantes :
+
+.Start Spring IO
+image::start.spring.io.png[]
+
+* Group: org.agoncal.formation.microservices.services
+* Artifact: generator-api
+* Name: generator-api
+* Description: Generator API
+* Package Name: org.bookstore.generator
+* Packaging: jar
+* Java Version: 8
+
+Dans la zone de texte `Search for dependencies` selectionnez `Web` puis cliquez sur `Generate Project`. Téléchargez puis dézippez le fichier sous le repertoire `services`.
+
+=== Architecture
+
+L'API Generator est accessible via un HTTP Get
+
+.Architecture
+image::architecture.png[]
+
+=== Developpement
+
+Il faut maintenant retoucher le code généré pour créer notre Generator API:
+
+* Supprimez tous les répertoires et fichiers qui se trouvent sous `src/main/resources`.
+* Créez le fichier `src/main/resources/application.yml`
+
