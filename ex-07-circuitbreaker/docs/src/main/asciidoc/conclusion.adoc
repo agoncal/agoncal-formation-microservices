@@ -1,0 +1,89 @@
+ifndef::imagesdir[:imagesdir: images]
+
+= Conclusion
+
+== Lessons learnt
+
+[%step]
+* Micro Services are hard
+* Micro Services are bloody hard
+* Need to integrate with a lot of infrastucture
+* Run in different environments (local, docker, pi)
+* The more technologies the harder
+* The more languages the harder
+* The more versions the harder
+
+== And...
+
+[%step]
+* We didn't have databases
+* We didn't have a complex business logic
+* We didn't have a complex network
+* We didn't duplicate and load balance the registry
+* We didn't use asynchronous events
+* We didn't do integration testing
+* We didn't do tracing (Zipkin)
+* We didn't do rate limit on our APIs
+
+== What do the others think?
+
+== What do the others think?
+
+image::quote-cb.png[]
+
+== What do the others think?
+
+image::quote-cb2.png[]
+
+== What do the others think?
+
+image::quote-pb.png[]
+
+== What do the others think?
+
+image::quote-sd.png[]
+
+== What do the others think?
+
+image::quote-ak.png[]
+
+== Advantages
+
+[%step]
+* Deliver new features quicker
+* Smaller, more agile teams
+* Deliver business features as services
+* Scale services independently
+* Address unpredictable loads
+* Cloud
+
+== But remember
+
+[%step]
+* Use this type of architecture
+* If you need it
+* Because it brings you advantages
+* Not because the others are doing it
+
+== Thank you
+
+image::thankyou.jpg[height=575]
+
+== Thanks for the Pis !
+
+image::tomitribe.png[]
+
+== Voxxed Days Microservices
+
+image::Voxxed_Days_Microservices.png[]
+
+== Q & A
+
+image::question.jpg[height=575]
+
+== Keeping in touch
+
+* Antonio Goncalves https://twitter.com/agoncal[@agoncal]
+* Roberto Cortez https://twitter.com/radcortez[@radcortez]
+* https://github.com/agoncal/baking-microservice-pie
+

@@ -1,0 +1,87 @@
+ifndef::imagesdir[:imagesdir: images]
+
+= Introduction
+
+[%step]
+* Welcome to Devoxx UK
+* Hope it's not too early...
+* ...and that you are ready for a 3h session
+* Thank you for joining us
+
+== Roberto Cortez
+
+image::roberto.jpg[]
+
+== Antonio Goncalves
+
+image::antonio.jpg[]
+
+== Listen to our story
+
+[%step]
+* This talk is about our journey...
+* ...through a Microservices architecture
+* We'll progressively build a MS architecture
+* Going from problem, to solution...
+* ...to problem, to solution...
+* ...to problem
+* And end-up building a (_basic_) distributed application
+
+== Anytime
+
+image::question.jpg[]
+
+== Demo
+
+image::load-architecture.png[]
+
+== Architecture
+
+[%step]
+* Microservices
+* Monitoring
+* Configuration
+* Discovery Mechanism
+* Load Balancing
+* Circuit Breaker
+* Gateway
+* Security
+
+== Hardware
+
+[%step]
+* Local machine
+* 12 Raspberry PIs
+** 6 Servers (Orange + Red)
+** 2 Infrastructure (Purple)
+** 4 Clients (Black)
+** 1 Router
+** 3 Switches
+** Allows us to plug/unplug
+
+== Software
+
+[%step]
+* Java / Angular (TypeScript)
+* Micro Profile
+* TomEE / Wildfly Swarm
+* NGinx / ELK
+* Netflix OSS
+* Consul
+* Tribestream Access Gateway
+
+== Infrastructure
+
+[%step]
+* HypriotOS
+* Ansible
+* Docker
+* Docker compose
+
+== Database
+
+[%step]
+* Well...
+* ...H2 in-memory
+
+== That's what we will be building during these 3 hours

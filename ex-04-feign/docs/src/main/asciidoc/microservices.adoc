@@ -1,0 +1,36 @@
+ifndef::imagesdir[:imagesdir: images]
+
+= Micro services
+
+[%step]
+* Have you heard about Microservices ?
+* Who uses with Microservices ?
+* Who plays with Microservices ?
+* Who likes Microservices ?
+* Who suffers with Microservices ?
+* Do you know how big is a "micro" ?
+
+== What do people mean by micro services ?
+
+[%step]
+* "Small autonomous services working together"
+* "Small enough but not too small"
+* "Can be written in 2 weeks"
+* "Single responsability principle"
+* "Domain-driven design"
+* "Hexagonal architecture"
+* "Blah, blah, blah"
+
+== Promise, we won't talk about Pizzas !
+
+image::pizzas2.jpg[]
+
+== So, why Microservices ?
+
+[%step]
+* Business focused (bounded context)
+* Deliver new features quicker
+* Smaller, more agile teams
+* Scale services independently
+* Address unpredictable loads
+* Cloud

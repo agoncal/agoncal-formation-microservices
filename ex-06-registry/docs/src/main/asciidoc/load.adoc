@@ -1,0 +1,21 @@
+ifndef::imagesdir[:imagesdir: images]
+
+= Handling Load
+
+[%step]
+* We have microservices all over
+* They all depend on each other
+* We have several clients
+* We have several services
+* Things (can) go wrong
+* Things always go wrong !
+
+== Demo
+
+image::load-architecture.png[]
+
+== What's next ?
+
+[%step]
+* Much more
+* But we don't have time

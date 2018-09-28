@@ -1,0 +1,21 @@
+version: '2'
+services:
+    generator-api:
+        image: bookstore/generator-api:99
+        container_name: generator-api
+        ports:
+            - 8084:8084
+        depends_on:
+          - consul
+        environment:
+        - NUMBER_API_HOST=http://number-api
+        - NUMBER_API_PORT=8084
+        - CONSUL_HOST=http://consul
+        - CONSUL_PORT=8500
+    consul:
+      image: consul:1.2.0
+      ports:
+      - 8300:8300
+      - 8500:8500
+      - 8600:8600
+      command: consul agent -dev -ui -client 0.0.0.0

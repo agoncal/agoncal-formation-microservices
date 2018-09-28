@@ -1,0 +1,88 @@
+ifndef::imagesdir[:imagesdir: images]
+
+= Monitoring
+
+[%step]
+* We have several Microservices
+* Running on several PIs
+* Something goes wrong
+* How do we monitor them?
+
+== Architecture
+
+image::monitoring-architecture.png[height=575]
+
+== Central Monitoring
+
+[%step]
+* Centralize logs
+* Easier to  vizualize
+* Several nodes logging to a single place
+* Allows to quickly see failures
+
+== Several to choose from
+
+[%step]
+* Home made log aggregation
+* Syslog
+* Fluentd
+* Splunk
+* Flume
+* Logmatic.io
+* ELK
+
+== Logstash
+
+[%step]
+* Centralize, Transform & Stash Your Data
+* Data processing pipeline
+* Ingests data from a multitude of sources
+* From Wildfly Swarm and TomEE logs
+* Push to Elasticsearch
+
+== Elasticsearch
+
+[%step]
+* Search and analytics engine
+* Centrally stores the data
+* From Logstash or other sources
+* So you can search out logs
+* Or any other information
+
+== Kibana
+
+[%step]
+* Lets you visualize Elasticsearch data
+* Shape your data
+* Interactive visualizations
+
+== Gelf
+
+[%step]
+* Graylog Extended Log Format
+* Log format avoids classic plain syslog
+* Docker log driver
+
+== logstash.conf
+
+[source]
+----
+include::{demo03dir}/infra/elk/logstash.conf[]
+----
+
+== Gelf on docker-compose
+
+[source,yaml]
+----
+include::{demo03dir}/docker-compose.yml[]
+----
+
+== Demo
+
+image::monitoring-architecture.png[height=575]
+
+== What's next ?
+
+[%step]
+* Fixing IP addresses
+* Adding configuration
