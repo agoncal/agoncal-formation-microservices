@@ -1,0 +1,11 @@
+version: '2'
+services:
+    store-postgresql:
+        image: postgres:10.3
+        # volumes:
+        #     - ~/volumes/jhipster/store/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=store
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5433:5432
