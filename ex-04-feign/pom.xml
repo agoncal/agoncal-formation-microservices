@@ -18,22 +18,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.agoncal.training.microservices.commons</groupId>
-        <artifactId>commons-pom</artifactId>
-        <version>1.0</version>
-        <relativePath>../commons/commons-pom/pom.xml</relativePath>
-    </parent>
-
-    <groupId>org.agoncal.training.microservices</groupId>
+    <groupId>org.agoncal.formation.microservices</groupId>
     <artifactId>exercise</artifactId>
-    <version>99</version>
+    <version>04</version>
     <packaging>pom</packaging>
-    <name>Microservices Training :: Exercise :: 99 Final</name>
+    <name>Formation Microservices :: Exercise :: 04 Feign</name>
 
     <modules>
-        <module>services</module>
+        <module>docs</module>
         <module>clients</module>
         <module>infra</module>
+        <module>services</module>
     </modules>
 </project>

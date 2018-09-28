@@ -19,14 +19,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.agoncal.training.microservices</groupId>
+    <groupId>org.agoncal.formation.microservices</groupId>
     <artifactId>parent</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
-    <name>Microservices Training :: Parent</name>
+    <name>Formation Microservices :: Parent</name>
 
     <modules>
-        <module>commons</module>
+        <module>ex-01-rest</module>
+        <module>ex-02-openapi</module>
+        <module>ex-03-cors</module>
+        <module>ex-04-feign</module>
+        <module>ex-05-monitoring</module>
+        <module>ex-06-registry</module>
+        <module>ex-07-circuitbreaker</module>
+        <module>ex-08-scale</module>
+        <module>ex-09-security</module>
         <module>ex-99-final</module>
     </modules>
 </project>
