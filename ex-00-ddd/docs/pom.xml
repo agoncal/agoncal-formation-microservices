@@ -21,9 +21,9 @@
 
     <groupId>org.agoncal.formation.microservices</groupId>
     <artifactId>docs</artifactId>
-    <version>01</version>
+    <version>00</version>
     <packaging>jar</packaging>
-    <name>Formation Microservices :: Exercise :: 01 REST :: Docs</name>
+    <name>Formation Microservices :: Exercise :: 00 DDD :: Docs</name>
 
     <properties>
         <!-- PlantUML -->
@@ -33,10 +33,6 @@
         <asciidoctor.maven.plugin.version>1.5.5</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>1.5.6</asciidoctorj.version>
         <jruby.version>1.7.26</jruby.version>
-        <!-- Revealjs -->
-        <revealjs.version>3.6.0</revealjs.version>
-        <asciidoctor-revealjs.version>master</asciidoctor-revealjs.version>
-        <project.slides.directory>${project.build.directory}/generated-slides</project.slides.directory>
         <!-- Pdf -->
         <asciidoctorj.pdf.version>1.5.0-alpha.16</asciidoctorj.pdf.version>
         <!-- Common -->
@@ -78,39 +74,6 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>com.googlecode.maven-download-plugin</groupId>
-                <artifactId>download-maven-plugin</artifactId>
-                <version>1.3.0</version>
-                <executions>
-                    <execution>
-                        <id>install-asciidoctor-revealjs</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>wget</goal>
-                        </goals>
-                        <configuration>
-                            <url>https://github.com/asciidoctor/asciidoctor-reveal.js/archive/${asciidoctor-revealjs.version}.zip</url>
-                            <unpack>true</unpack>
-                            <outputFileName>asciidoctor-reveal.js-${asciidoctor-revealjs.version}.zip</outputFileName>
-                            <outputDirectory>${project.build.directory}</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>install-revealjs</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>wget</goal>
-                        </goals>
-                        <configuration>
-                            <url>https://github.com/hakimel/reveal.js/archive/${revealjs.version}.zip</url>
-                            <unpack>true</unpack>
-                            <outputFileName>reveal.js-${revealjs.version}.zip</outputFileName>
-                            <outputDirectory>${project.slides.directory}</outputDirectory>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
                 <version>${asciidoctor.maven.plugin.version}</version>
@@ -136,49 +99,14 @@
                 </dependencies>
                 <executions>
                     <execution>
-                        <id>generate-slides</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>process-asciidoc</goal>
-                        </goals>
-                        <configuration>
-                            <sourceDocumentName>slides.adoc</sourceDocumentName>
-                            <outputDirectory>${project.slides.directory}</outputDirectory>
-                            <backend>revealjs</backend>
-                            <templateDir>${project.build.directory}/asciidoctor-reveal.js-${asciidoctor-revealjs.version}/templates</templateDir>
-                            <sourceHighlighter>coderay</sourceHighlighter>
-                            <attributes>
-                                <!-- 
-                                    As we are downloading reveal.js in runtime, it sits in a nonstandard folder `reveal.js-${revealjs.version}`
-                                -->
-                                <revealjsdir>reveal.js-${revealjs.version}</revealjsdir>
-                                <!-- put here the reveal.js specific attributes -->
-                                <sourcedir>${basedir}/..</sourcedir>
-                                <revealjs_theme>beige</revealjs_theme>
-                                <revealjs_transition>slide</revealjs_transition>
-                                <revealjs_slideNumber>true</revealjs_slideNumber>
-                                <project-version>${project.version}</project-version>
-                            </attributes>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>generate-pdf-doc</id>
+                        <id>output-pdf</id>
                         <phase>generate-resources</phase>
                         <goals>
                             <goal>process-asciidoc</goal>
                         </goals>
                         <configuration>
-                            <sourceDocumentName>slides.adoc</sourceDocumentName>
+                            <sourceDocumentName>exercise.adoc</sourceDocumentName>
                             <backend>pdf</backend>
-                            <sourceHighlighter>coderay</sourceHighlighter>
-                            <attributes>
-                                <icons>font</icons>
-                                <pagenums/>
-                                <toc/>
-                                <idprefix/>
-                                <idseparator>-</idseparator>
-                                <imagesdir>${project.build.directory}/generated-docs/images</imagesdir>
-                            </attributes>
                         </configuration>
                     </execution>
                 </executions>

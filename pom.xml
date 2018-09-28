@@ -26,6 +26,7 @@
     <name>Formation Microservices :: Parent</name>
 
     <modules>
+        <module>ex-00-ddd</module>
         <module>ex-01-rest</module>
         <module>ex-02-openapi</module>
         <module>ex-03-cors</module>
