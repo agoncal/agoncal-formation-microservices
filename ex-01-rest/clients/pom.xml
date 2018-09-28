@@ -19,18 +19,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.agoncal.formation.microservices</groupId>
-        <artifactId>demo</artifactId>
-        <version>99</version>
-    </parent>
-
+    <groupId>org.agoncal.formation.microservices</groupId>
     <artifactId>clients</artifactId>
+    <version>01</version>
     <packaging>pom</packaging>
-    <name>Formation Microservices :: Demo :: 99 Final :: Clients</name>
+    <name>Formation Microservices :: Exercise :: 01 REST :: Clients</name>
 
-    <!--<modules>-->
-        <!--<module>angular</module>-->
-        <!--<module>simulator</module>-->
-    <!--</modules>-->
+    <modules>
+        <module>simulator</module>
+    </modules>
 </project>

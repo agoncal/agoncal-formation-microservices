@@ -19,16 +19,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.agoncal.formation.microservices</groupId>
-        <artifactId>services</artifactId>
-        <version>99</version>
-    </parent>
-
+    <groupId>org.agoncal.formation.microservices.services</groupId>
     <artifactId>generator-api</artifactId>
-    <version>99</version>
+    <version>03</version>
     <packaging>jar</packaging>
-    <name>Formation Microservices :: Demo :: 99 Final :: Services :: Generator API</name>
+    <name>Formation Microservices :: Exercise :: 03 CORS :: Services :: Generator API</name>
 
     <dependencyManagement>
         <!-- BOMS -->
