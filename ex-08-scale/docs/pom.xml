@@ -97,6 +97,14 @@
                         <version>${asciidoctorj.pdf.version}</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+                    <relativeBaseDir>true</relativeBaseDir>
+                    <attributes>
+                        <!-- Allows access to remote files (e.g. code on external GitHub) -->
+                        <allow-uri-read/>
+                        <ex08dir>../../../../../ex-08-scale</ex08dir>
+                    </attributes>
+                </configuration>
                 <executions>
                     <execution>
                         <id>output-pdf</id>

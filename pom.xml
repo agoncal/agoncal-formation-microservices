@@ -31,11 +31,10 @@
         <module>ex-02-openapi</module>
         <module>ex-03-cors</module>
         <module>ex-04-feign</module>
-        <module>ex-05-monitoring</module>
-        <module>ex-06-registry</module>
-        <module>ex-07-circuitbreaker</module>
-        <module>ex-08-scale</module>
-        <module>ex-09-security</module>
-        <module>ex-99-final</module>
+        <!--<module>ex-05-monitoring</module>-->
+        <!--<module>ex-06-registry</module>-->
+        <!--<module>ex-07-circuitbreaker</module>-->
+        <!--<module>ex-08-scale</module>-->
+        <!--<module>ex-09-security</module>-->
     </modules>
 </project>

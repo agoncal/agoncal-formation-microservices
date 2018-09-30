@@ -97,6 +97,14 @@
                         <version>${asciidoctorj.pdf.version}</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+                    <relativeBaseDir>true</relativeBaseDir>
+                    <attributes>
+                        <!-- Allows access to remote files (e.g. code on external GitHub) -->
+                        <allow-uri-read/>
+                        <ex07dir>../../../../../ex-07-circuitbreaker</ex07dir>
+                    </attributes>
+                </configuration>
                 <executions>
                     <execution>
                         <id>output-pdf</id>

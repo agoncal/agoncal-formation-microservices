@@ -26,9 +26,6 @@
     <name>Formation Microservices :: Exercise :: 01 REST :: Docs</name>
 
     <properties>
-        <!-- PlantUML -->
-        <version.plantuml.maven.plugin>1.2</version.plantuml.maven.plugin>
-        <version.plantuml>8059</version.plantuml>
         <!-- Asciidoctor -->
         <asciidoctor.maven.plugin.version>1.5.5</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>1.5.6</asciidoctorj.version>
@@ -44,35 +41,6 @@
     <build>
         <defaultGoal>process-resources</defaultGoal>
         <plugins>
-            <plugin>
-                <groupId>com.github.jeluard</groupId>
-                <artifactId>plantuml-maven-plugin</artifactId>
-                <version>${version.plantuml.maven.plugin}</version>
-                <configuration>
-                    <outputDirectory>${basedir}/src/main/asciidoc/images</outputDirectory>
-                    <sourceFiles>
-                        <directory>${basedir}/src/main/plantuml</directory>
-                        <includes>
-                            <include>**/*.puml</include>
-                        </includes>
-                    </sourceFiles>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.sourceforge.plantuml</groupId>
-                        <artifactId>plantuml</artifactId>
-                        <version>${version.plantuml}</version>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <plugin>
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctor-maven-plugin</artifactId>
@@ -104,6 +72,13 @@
                         <allow-uri-read/>
                         <ex01dir>../../../../../ex-01-rest</ex01dir>
                         <ex02dir>../../../../../ex-02-openapi</ex02dir>
+                        <ex03dir>../../../../../ex-03-cors</ex03dir>
+                        <ex04dir>../../../../../ex-04-feign</ex04dir>
+                        <ex05dir>../../../../../ex-05-monitoring</ex05dir>
+                        <ex06dir>../../../../../ex-06-registry</ex06dir>
+                        <ex07dir>../../../../../ex-07-circuitbreaker</ex07dir>
+                        <ex08dir>../../../../../ex-08-scale</ex08dir>
+                        <ex09dir>../../../../../ex-09-security</ex09dir>
                     </attributes>
                 </configuration>
                 <executions>

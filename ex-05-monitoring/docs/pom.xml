@@ -21,7 +21,7 @@
 
     <groupId>org.agoncal.formation.microservices</groupId>
     <artifactId>docs</artifactId>
-    <version>03</version>
+    <version>05</version>
     <packaging>jar</packaging>
     <name>Formation Microservices :: Exercise :: 05 Monitoring :: Docs</name>
 
@@ -97,6 +97,14 @@
                         <version>${asciidoctorj.pdf.version}</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+                    <relativeBaseDir>true</relativeBaseDir>
+                    <attributes>
+                        <!-- Allows access to remote files (e.g. code on external GitHub) -->
+                        <allow-uri-read/>
+                        <ex05dir>../../../../../ex-05-monitoring</ex05dir>
+                    </attributes>
+                </configuration>
                 <executions>
                     <execution>
                         <id>output-pdf</id>

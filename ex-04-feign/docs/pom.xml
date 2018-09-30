@@ -21,9 +21,9 @@
 
     <groupId>org.agoncal.formation.microservices</groupId>
     <artifactId>docs</artifactId>
-    <version>03</version>
+    <version>04</version>
     <packaging>jar</packaging>
-    <name>Formation Microservices :: Exercise :: 03 CORS :: Docs</name>
+    <name>Formation Microservices :: Exercise :: 04 Feign :: Docs</name>
 
     <properties>
         <!-- PlantUML -->
@@ -97,6 +97,14 @@
                         <version>${asciidoctorj.pdf.version}</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+                    <relativeBaseDir>true</relativeBaseDir>
+                    <attributes>
+                        <!-- Allows access to remote files (e.g. code on external GitHub) -->
+                        <allow-uri-read/>
+                        <ex04dir>../../../../../ex-04-feign</ex04dir>
+                    </attributes>
+                </configuration>
                 <executions>
                     <execution>
                         <id>output-pdf</id>

@@ -19,13 +19,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.agoncal.formation.microservices</groupId>
-        <artifactId>demo</artifactId>
-        <version>99</version>
-    </parent>
-
+    <groupId>org.agoncal.formation.microservices</groupId>
     <artifactId>infra</artifactId>
+    <version>04</version>
     <packaging>pom</packaging>
-    <name>Formation Microservices :: Demo :: 99 Final :: Infra</name>
+    <name>Formation Microservices :: Exercise :: 04 Feign :: Infra</name>
 </project>

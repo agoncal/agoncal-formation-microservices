@@ -16,16 +16,20 @@
 :toclevels: 4
 :toc-title: Contents
 
-:sectnums!:
-
-
-
 // ======================================
 // ============== EXERCISES =============
 // ======================================
 
 :sectnums:
 
+include::../../../../ex-00-ddd/docs/src/main/asciidoc/exercise.adoc[leveloffset=+1]
 include::../../../../ex-01-rest/docs/src/main/asciidoc/exercise.adoc[leveloffset=+1]
 include::../../../../ex-02-openapi/docs/src/main/asciidoc/exercise.adoc[leveloffset=+1]
+include::../../../../ex-03-cors/docs/src/main/asciidoc/exercise.adoc[leveloffset=+1]
+include::../../../../ex-04-feign/docs/src/main/asciidoc/exercise.adoc[leveloffset=+1]
+include::../../../../ex-05-monitoring/docs/src/main/asciidoc/exercise.adoc[leveloffset=+1]
+include::../../../../ex-06-registry/docs/src/main/asciidoc/exercise.adoc[leveloffset=+1]
+include::../../../../ex-07-circuitbreaker/docs/src/main/asciidoc/exercise.adoc[leveloffset=+1]
+include::../../../../ex-08-scale/docs/src/main/asciidoc/exercise.adoc[leveloffset=+1]
+include::../../../../ex-09-security/docs/src/main/asciidoc/exercise.adoc[leveloffset=+1]
 
