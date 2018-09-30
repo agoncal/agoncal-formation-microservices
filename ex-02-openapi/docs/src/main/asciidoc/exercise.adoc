@@ -1,0 +1,22 @@
+= Exercise 02 - Open API
+
+== Architecture
+
+L'API Generator est accessible via un HTTP Get
+
+.Architecture
+image::architecture.png[]
+
+== Structure du projet
+
+== Generator API
+
+L'API Generator genère un nombre aléatoire.
+
+=== Resource REST
+
+.NumberGeneratorResource.java
+[source,java]
+----
+include::{ex02dir}/services/generator-api/src/main/java/org/bookstore/generator/rest/NumberGeneratorResource.java[]
+----

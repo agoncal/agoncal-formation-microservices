@@ -1,6 +1,4 @@
-= Formation Microservices
-Exercise 01 - REST
-:generator-api-dir: ../../../../services/generator-api
+= Exercise 01 - REST
 
 == Architecture
 
@@ -42,7 +40,7 @@ L'API Generator genère un nombre aléatoire.
 .NumberGeneratorResource.java
 [source,java]
 ----
-include::{generator-api-dir}/src/main/java/org/bookstore/generator/rest/NumberGeneratorResource.java[tags=adocSnippet]
+include::{ex01dir}/services/generator-api/src/main/java/org/bookstore/generator/rest/NumberGeneratorResource.java[tags=adocSnippet]
 ----
 
 === Configuration
@@ -52,7 +50,7 @@ include::{generator-api-dir}/src/main/java/org/bookstore/generator/rest/NumberGe
 .Configuration file application.yml
 [source,yml]
 ----
-include::{generator-api-dir}/src/main/resources/application.yml[]
+include::{ex01dir}/services/generator-api/src/main/resources/application.yml[]
 ----
 
 === Test
@@ -60,7 +58,7 @@ include::{generator-api-dir}/src/main/resources/application.yml[]
 .NumberGeneratorResourceIntTest.java
 [source,java]
 ----
-include::{generator-api-dir}/src/test/java/org/bookstore/generator/rest/NumberGeneratorResourceIntTest.java[tags=adocSnippet]
+include::{ex01dir}/services/generator-api/src/test/java/org/bookstore/generator/rest/NumberGeneratorResourceIntTest.java[tags=adocSnippet]
 ----
 
 === Build et Test

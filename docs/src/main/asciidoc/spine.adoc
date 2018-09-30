@@ -1,0 +1,31 @@
+= Formation Microservices
+:source-highlighter: coderay
+:source-language: java
+// Caption and XRef caption
+:appendix-caption: Appendix
+:listing-caption: Listing
+:figure-caption: Figure
+:table-caption: Table
+:xrefstyle: short
+// User defined directory
+:ex01dir: ../../../../ex-01-rest
+:ex01servicesdir: {ex01dir}/services/generator-api
+
+// TOC
+:toc:
+:toclevels: 4
+:toc-title: Contents
+
+:sectnums!:
+
+
+
+// ======================================
+// ============== EXERCISES =============
+// ======================================
+
+:sectnums:
+
+include::../../../../ex-01-rest/docs/src/main/asciidoc/exercise.adoc[leveloffset=+1]
+include::../../../../ex-02-openapi/docs/src/main/asciidoc/exercise.adoc[leveloffset=+1]
+

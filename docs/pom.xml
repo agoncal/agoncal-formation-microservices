@@ -103,6 +103,7 @@
                         <!-- Allows access to remote files (e.g. code on external GitHub) -->
                         <allow-uri-read/>
                         <ex01dir>../../../../../ex-01-rest</ex01dir>
+                        <ex02dir>../../../../../ex-02-openapi</ex02dir>
                     </attributes>
                 </configuration>
                 <executions>
@@ -113,7 +114,7 @@
                             <goal>process-asciidoc</goal>
                         </goals>
                         <configuration>
-                            <sourceDocumentName>exercise.adoc</sourceDocumentName>
+                            <sourceDocumentName>spine.adoc</sourceDocumentName>
                             <backend>pdf</backend>
                         </configuration>
                     </execution>
