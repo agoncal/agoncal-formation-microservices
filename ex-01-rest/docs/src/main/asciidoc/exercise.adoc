@@ -1,13 +1,17 @@
 = Formation Microservices
 Exercise 01 - REST
+:generator-api-dir: ../../../../services/generator-api
+
+== Architecture
+
+L'API Generator est accessible via un HTTP Get
+
+.Architecture
+image::architecture.png[]
 
 == Structure du projet
 
-== Generator API
-
-L'API Generator genère un nombre aléatoire.
-
-=== Création
+== Générer le projet
 
 Aller sur https://start.spring.io pour générer un projet Spring Boot. Pour avoir plus d'options, cliquez sur `Switch to the full version` puis saisissez les données suivantes :
 
@@ -24,17 +28,44 @@ image::start.spring.io.png[]
 
 Dans la zone de texte `Search for dependencies` selectionnez `Web` puis cliquez sur `Generate Project`. Téléchargez puis dézippez le fichier sous le repertoire `services`.
 
-=== Architecture
-
-L'API Generator est accessible via un HTTP Get
-
-.Architecture
-image::architecture.png[]
-
-=== Developpement
-
-Il faut maintenant retoucher le code généré pour créer notre Generator API:
+Il faut maintenant retoucher le code généré :
 
 * Supprimez tous les répertoires et fichiers qui se trouvent sous `src/main/resources`.
-* Créez le fichier `src/main/resources/application.yml`
+* Supprimez la classe de test `src/test/java/org/bookstore/generator/GeneratorApiApplicationTests.java`
 
+== Generator API
+
+L'API Generator genère un nombre aléatoire.
+
+=== Resource REST
+
+.NumberGeneratorResource.java
+[source,java]
+----
+include::{generator-api-dir}/src/main/java/org/bookstore/generator/rest/NumberGeneratorResource.java[tags=adocSnippet]
+----
+
+=== Configuration
+
+* Créez le fichier `src/main/resources/application.yml` et y ajouter la configuration suivante
+
+.Configuration file application.yml
+[source,yml]
+----
+include::{generator-api-dir}/src/main/resources/application.yml[]
+----
+
+=== Test
+
+.NumberGeneratorResourceIntTest.java
+[source,java]
+----
+include::{generator-api-dir}/src/test/java/org/bookstore/generator/rest/NumberGeneratorResourceIntTest.java[tags=adocSnippet]
+----
+
+=== Build et Test
+
+[source,shell]
+----
+$ mvn clean test
+----

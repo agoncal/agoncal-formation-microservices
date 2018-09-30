@@ -19,6 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  *
  * @see NumberGeneratorResource
  */
+// tag::adocSnippet[]
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class NumberGeneratorResourceIntTest {
@@ -43,12 +44,5 @@ public class NumberGeneratorResourceIntTest {
 
         assertThat(result.getResponse().getContentAsString().startsWith("BK-"));
     }
-
-    @Test
-    public void checkHealth() throws Exception {
-
-        // Checks Health
-        restNumberGeneratorMockMvc.perform(get("/api/numbers/health"))
-                .andExpect(status().isOk());
-    }
 }
+// end::adocSnippet[]
