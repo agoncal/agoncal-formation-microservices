@@ -25,18 +25,24 @@
     <packaging>jar</packaging>
     <name>Formation Microservices :: Exercise :: 03 CORS :: Services :: Store API</name>
 
-    <dependencyManagement>
-        <!-- BOMS -->
-        <dependencies>
-            <dependency>
-                <groupId>org.agoncal.training.microservices.commons</groupId>
-                <artifactId>commons-bom</artifactId>
-                <version>1.0</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.5.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <springfox.version>2.9.2</springfox.version>
+        <swagger.version>1.5.21</swagger.version>
+        <zalando.version>0.22.0</zalando.version>
+        <mapstruct.version>1.2.0.Final</mapstruct.version>
+        <hikari.version>3.2.0</hikari.version>
+        <postgres.version>42.2.5</postgres.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -50,43 +56,53 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-bean-validators</artifactId>
+            <version>${springfox.version}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox.version}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox.version}</version>
         </dependency>
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
+            <version>${swagger.version}</version>
         </dependency>
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-models</artifactId>
+            <version>${swagger.version}</version>
         </dependency>
         <dependency>
             <groupId>org.zalando</groupId>
             <artifactId>problem</artifactId>
+            <version>${zalando.version}</version>
         </dependency>
         <dependency>
             <groupId>org.zalando</groupId>
             <artifactId>problem-spring-web</artifactId>
+            <version>${zalando.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct-jdk8</artifactId>
+            <version>${mapstruct.version}</version>
         </dependency>
         <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
+            <version>${hikari.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
+            <version>${postgres.version}</version>
             <scope>runtime</scope>
         </dependency>
 
@@ -103,28 +119,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <!--<plugin>-->
-                <!--<groupId>com.github.kongchen</groupId>-->
-                <!--<artifactId>swagger-maven-plugin</artifactId>-->
-                <!--<configuration>-->
-                    <!--<apiSources>-->
-                        <!--<apiSource>-->
-                            <!--<springmvc>false</springmvc>-->
-                            <!--<locations>org.bookstore.store</locations>-->
-                            <!--<schemes>http,https</schemes>-->
-                            <!--<host>localhost:${listening.port}</host>-->
-                            <!--<basePath>/book-api/api</basePath>-->
-                            <!--<info>-->
-                                <!--<title>Book API</title>-->
-                                <!--<version>${project.version}</version>-->
-                                <!--<description>Operations for Books.</description>-->
-                            <!--</info>-->
-                            <!--<swaggerDirectory>${basedir}/src/main/webapp</swaggerDirectory>-->
-                            <!--<outputFormats>json</outputFormats>-->
-                        <!--</apiSource>-->
-                    <!--</apiSources>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
@@ -165,30 +159,24 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!--<plugin>-->
-                <!--<groupId>io.swagger</groupId>-->
-                <!--<artifactId>swagger-codegen-maven-plugin</artifactId>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<goals>-->
-                            <!--<goal>generate</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<inputSpec>${project.basedir}/src/main/resources/generator-api-docs.json</inputSpec>-->
-                            <!--<language>spring</language>-->
-                            <!--<configOptions>-->
-                                <!--&lt;!&ndash;<sourceFolder>${project.basedir}/target/generated-sources/swagger/org/bookstore/store/client</sourceFolder>&ndash;&gt;-->
-                                <!--<generateApiTests>false</generateApiTests>-->
-                                <!--<generateSupportingFiles>false</generateSupportingFiles>-->
-                                <!--<generateSupportingFiles>true</generateSupportingFiles>-->
-                                <!--<modelPackage>org.bookstore.store.client.model</modelPackage>-->
-                                <!--<apiPackage>org.bookstore.store.client.api</apiPackage>-->
-                            <!--</configOptions>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <debug>true</debug>
+                    <optimize>true</optimize>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.mapstruct</groupId>
+                            <artifactId>mapstruct-processor</artifactId>
+                            <version>${mapstruct.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>
