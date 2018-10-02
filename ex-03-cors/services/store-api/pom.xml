@@ -167,8 +167,14 @@
                                 <generateApiTests>false</generateApiTests>
                                 <modelPackage>org.bookstore.store.client.model</modelPackage>
                                 <apiPackage>org.bookstore.store.client.api</apiPackage>
+                                <generateApis>false</generateApis>
+                                <generateApiTests>false</generateApiTests>
+                                <generateApiDocumentation>false</generateApiDocumentation>
+                                <generateModels>false</generateModels>
+                                <generateModelTests>false</generateModelTests>
+                                <generateModelDocumentation>false</generateModelDocumentation>
                                 <!--<generateSupportingFiles>false</generateSupportingFiles>-->
-                                <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
+                                <!--<supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>-->
                             </configOptions>
                         </configuration>
                     </execution>
