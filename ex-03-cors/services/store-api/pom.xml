@@ -164,7 +164,6 @@
                             <inputSpec>${project.basedir}/src/main/resources/generator-api-docs.json</inputSpec>
                             <generatorName>spring</generatorName>
                             <configOptions>
-                                <generateApiTests>false</generateApiTests>
                                 <modelPackage>org.bookstore.store.client.model</modelPackage>
                                 <apiPackage>org.bookstore.store.client.api</apiPackage>
                                 <generateApis>false</generateApis>
