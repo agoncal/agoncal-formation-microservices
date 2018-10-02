@@ -15,23 +15,25 @@ import org.springframework.web.client.RestTemplate;
 @ConfigurationProperties
 public class SimulatorGeneratorApiApplication implements CommandLineRunner {
 
-	private final Logger log = LoggerFactory.getLogger(SimulatorGeneratorApiApplication.class);
+    private final Logger log = LoggerFactory.getLogger(SimulatorGeneratorApiApplication.class);
 
-	@Autowired
-	private Environment env;
+    @Autowired
+    private Environment env;
 
-	public static void main(String[] args) {
-		SpringApplication.run(SimulatorGeneratorApiApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SimulatorGeneratorApiApplication.class, args);
+    }
 
-	@Override
-	public void run(String... args) throws Exception {
-		int nbLoops = Integer.parseInt(env.getProperty("simulator.loop"));
-		long sleep = Long.parseLong(env.getProperty("simulator.sleep"));
+    @Override
+    public void run(String... args) throws Exception {
+        int nbLoops = Integer.parseInt(env.getProperty("simulator.loop"));
+        long sleep = Long.parseLong(env.getProperty("simulator.sleep"));
 
         for (int i = 0; i < nbLoops; i++) {
             try {
                 getGeneratorApi();
+                getGeneratorApiDoc();
+                getGeneratorApiSwaggerUI();
                 Thread.sleep(sleep);
             } catch (final Exception e) {
                 e.printStackTrace();
@@ -45,5 +47,21 @@ public class SimulatorGeneratorApiApplication implements CommandLineRunner {
         log.info("HTTP GET on " + url);
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
         log.info("\tResponse code {} - body {}", response.getStatusCode(), response.getBody());
+    }
+
+    private void getGeneratorApiDoc() {
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8081/generator/v2/api-docs";
+        log.info("HTTP GET on " + url);
+        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+        log.info("\tResponse code {}", response.getStatusCode());
+    }
+
+    private void getGeneratorApiSwaggerUI() {
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8081/generator/swagger-ui.html";
+        log.info("HTTP GET on " + url);
+        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+        log.info("\tResponse code {}", response.getStatusCode());
     }
 }

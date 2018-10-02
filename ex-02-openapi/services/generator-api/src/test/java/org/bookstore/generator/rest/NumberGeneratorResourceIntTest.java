@@ -43,12 +43,4 @@ public class NumberGeneratorResourceIntTest {
 
         assertThat(result.getResponse().getContentAsString().startsWith("BK-"));
     }
-
-    @Test
-    public void checkHealth() throws Exception {
-
-        // Checks Health
-        restNumberGeneratorMockMvc.perform(get("/api/numbers/health"))
-                .andExpect(status().isOk());
-    }
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * REST controller for Generating Numbers.
  */
+// tag::adocSnippet[]
 @RestController
 @RequestMapping("/api")
 @Api(description = "Generating all sorts of book numbers.")
@@ -33,11 +34,5 @@ public class NumberGeneratorResource {
         return ResponseEntity.ok()
                 .body(result);
     }
-
-    @GetMapping("/numbers/health")
-    @ApiOperation(value = "Checks the health of this REST endpoint")
-    public ResponseEntity<Void> health() {
-        log.info("Alive and Kicking !!!");
-        return ResponseEntity.ok().build();
-    }
 }
+// end::adocSnippet[]
