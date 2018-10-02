@@ -9,6 +9,28 @@ image::architecture.png[]
 
 == Structure du projet
 
+```
++-- services
+|   +-- book-api
+|   |     +-- src
+|   |       +-- main
+|   |       +-- test
+|   +-- number-api
+|   |     +-- src
+|   |       +-- main
+|   |       +-- test
++-- clients
+|   +-- angular application
+|   +-- jax rs client to test services
+|   +-- curl commands
++-- deployment
+|   +-- ansible scripts
+|   +-- docker config
++-- infra
+|   +-- consul
+|   +-- elk
+```
+
 == Générer le projet
 
 Aller sur https://start.spring.io pour générer un projet Spring Boot. Pour avoir plus d'options, cliquez sur `Switch to the full version` puis saisissez les données suivantes :
