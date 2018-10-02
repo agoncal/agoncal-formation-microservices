@@ -21,7 +21,7 @@
 
     <groupId>org.agoncal.formation.microservices</groupId>
     <artifactId>clients</artifactId>
-    <version>01</version>
+    <version>02</version>
     <packaging>pom</packaging>
     <name>Formation Microservices :: Exercise :: 02 OpenAPI :: Clients</name>
 

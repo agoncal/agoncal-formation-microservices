@@ -32,6 +32,18 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-parent</artifactId>
+                <version>Finchley.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <properties>
         <springfox.version>2.9.2</springfox.version>
         <swagger.version>1.5.21</swagger.version>
@@ -60,6 +72,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
@@ -152,6 +172,7 @@
                 </configuration>
             </plugin>
             <plugin>
+                <!-- Generate client for the generator API -->
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
                 <version>${openapi-codegen.version}</version>
@@ -163,17 +184,13 @@
                         <configuration>
                             <inputSpec>${project.basedir}/src/main/resources/generator-api-docs.json</inputSpec>
                             <generatorName>spring</generatorName>
+                            <library>spring-cloud</library>
+                            <templateDirectory>${project.basedir}/src/main/openapi</templateDirectory>
+                            <apiPackage>org.bookstore.store.client.generator.api</apiPackage>
+                            <modelPackage>org.bookstore.store.client.generator.model</modelPackage>
+                            <supportingFilesToGenerate>ApiKeyRequestInterceptor.java,ClientConfiguration.java</supportingFilesToGenerate>
                             <configOptions>
-                                <modelPackage>org.bookstore.store.client.model</modelPackage>
-                                <apiPackage>org.bookstore.store.client.api</apiPackage>
-                                <generateApis>false</generateApis>
-                                <generateApiTests>false</generateApiTests>
-                                <generateApiDocumentation>false</generateApiDocumentation>
-                                <generateModels>false</generateModels>
-                                <generateModelTests>false</generateModelTests>
-                                <generateModelDocumentation>false</generateModelDocumentation>
-                                <generateSupportingFiles>false</generateSupportingFiles>
-                                <!--<supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>-->
+                                <configPackage>org.bookstore.store.client.generator</configPackage>
                             </configOptions>
                         </configuration>
                     </execution>

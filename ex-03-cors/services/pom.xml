@@ -27,6 +27,5 @@
 
     <modules>
         <module>generator-api</module>
-        <!--<module>store-api</module>-->
     </modules>
 </project>

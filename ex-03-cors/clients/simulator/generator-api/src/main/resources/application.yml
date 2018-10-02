@@ -1,0 +1,3 @@
+simulator:
+  loop: 5
+  sleep: 1000

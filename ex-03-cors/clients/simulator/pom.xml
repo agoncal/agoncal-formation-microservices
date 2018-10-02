@@ -22,6 +22,10 @@
     <groupId>org.agoncal.formation.microservices.clients</groupId>
     <artifactId>simulator</artifactId>
     <version>03</version>
+    <packaging>pom</packaging>
     <name>Formation Microservices :: Exercise :: 03 CORS :: Clients :: Simulator</name>
 
+    <modules>
+        <module>generator-api</module>
+    </modules>
 </project>
