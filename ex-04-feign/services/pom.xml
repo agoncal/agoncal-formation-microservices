@@ -19,21 +19,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.agoncal.formation.microservices</groupId>
-        <artifactId>exercise</artifactId>
-        <version>99</version>
-    </parent>
-
+    <groupId>org.agoncal.formation.microservices</groupId>
     <artifactId>services</artifactId>
-    <version>99</version>
+    <version>04</version>
     <packaging>pom</packaging>
-    <name>Formation Microservices :: Exercise :: 99 Final :: Services</name>
+    <name>Formation Microservices :: Exercise :: 04 Feign :: Services</name>
 
     <modules>
         <module>generator-api</module>
-        <module>inventory-api</module>
         <module>store-api</module>
-        <module>toprated-api</module>
     </modules>
 </project>

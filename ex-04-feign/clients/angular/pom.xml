@@ -20,12 +20,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.agoncal.formation.microservices.clients</groupId>
-    <artifactId>simulator</artifactId>
-    <version>01</version>
-    <packaging>pom</packaging>
-    <name>Formation Microservices :: Exercise :: 01 REST :: Clients :: Simulator</name>
+    <artifactId>angular</artifactId>
+    <version>04</version>
+    <name>Formation Microservices :: Exercise :: 04 Feign :: Clients :: Angular</name>
 
-    <modules>
-        <module>generator-api</module>
-    </modules>
 </project>

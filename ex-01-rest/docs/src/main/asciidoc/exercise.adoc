@@ -67,3 +67,18 @@ include::{ex01dir}/services/generator-api/src/test/java/org/bookstore/generator/
 ----
 $ mvn clean test
 ----
+
+=== Execution
+
+Démarrer le microservices Generator API
+
+[source,shell]
+----
+$ mvn spring-boot:run
+----
+
+Puis accéder à l'URL http://localhost:8081/generator/api/numbers.
+
+=== Simulation
+
+
