@@ -33,15 +33,23 @@
     </parent>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
         <springfox.version>2.9.2</springfox.version>
         <swagger.version>1.5.21</swagger.version>
         <zalando.version>0.22.0</zalando.version>
         <mapstruct.version>1.2.0.Final</mapstruct.version>
         <hikari.version>3.2.0</hikari.version>
         <postgres.version>42.2.5</postgres.version>
+
+        <!-- External Maven Plugins -->
+        <liquibase.version>3.5.5</liquibase.version>
+        <openapi-codegen.version>3.3.0</openapi-codegen.version>
+        <maven-compiler.version>3.8.0</maven-compiler.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
     </properties>
 
     <dependencies>
@@ -62,6 +70,12 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>${springfox.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mapstruct</groupId>
+                    <artifactId>mapstruct</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
@@ -122,6 +136,7 @@
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
+                <version>${liquibase.version}</version>
                 <configuration>
                     <changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
                     <diffChangeLogFile>
@@ -139,6 +154,7 @@
             <plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>${openapi-codegen.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -148,12 +164,11 @@
                             <inputSpec>${project.basedir}/src/main/resources/generator-api-docs.json</inputSpec>
                             <generatorName>spring</generatorName>
                             <configOptions>
-                                <!--<sourceFolder>${project.basedir}/target/generated-sources/swagger/org/bookstore/store/client</sourceFolder>-->
                                 <generateApiTests>false</generateApiTests>
-                                <generateSupportingFiles>false</generateSupportingFiles>
-                                <generateSupportingFiles>true</generateSupportingFiles>
                                 <modelPackage>org.bookstore.store.client.model</modelPackage>
                                 <apiPackage>org.bookstore.store.client.api</apiPackage>
+                                <!--<generateSupportingFiles>false</generateSupportingFiles>-->
+                                <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
                             </configOptions>
                         </configuration>
                     </execution>
@@ -162,6 +177,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler.version}</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <source>${java.version}</source>
