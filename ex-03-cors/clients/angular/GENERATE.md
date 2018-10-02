@@ -11,13 +11,13 @@ Here are the commands and the steps that were used to create this project
 $ ng new bookstore --directory angular --routing true --skip-tests true --inline-style true
 
 # Add the needed dependencies
-$ yarn add @fortawesome/fontawesome-free@5.3.1
-$ yarn add @fortawesome/angular-fontawesome@0.1.1
-$ yarn add @fortawesome/fontawesome-svg-core@1.2.2
-$ yarn add @fortawesome/free-solid-svg-icons@5.2.0
-$ yarn add jquery@3.3.1
-$ yarn add bootstrap@4.1.3
-$ yarn add @ng-bootstrap/ng-bootstrap@3.0.0
+$ yarn add @fortawesome/fontawesome-free
+$ yarn add @fortawesome/angular-fontawesome
+$ yarn add @fortawesome/fontawesome-svg-core
+$ yarn add @fortawesome/free-solid-svg-icons
+$ yarn add jquery
+$ yarn add bootstrap
+$ yarn add @ng-bootstrap/ng-bootstrap
 ```
 
 The main application has two components
