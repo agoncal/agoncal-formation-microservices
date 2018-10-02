@@ -172,7 +172,7 @@
                                 <generateModels>false</generateModels>
                                 <generateModelTests>false</generateModelTests>
                                 <generateModelDocumentation>false</generateModelDocumentation>
-                                <!--<generateSupportingFiles>false</generateSupportingFiles>-->
+                                <generateSupportingFiles>false</generateSupportingFiles>
                                 <!--<supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>-->
                             </configOptions>
                         </configuration>
