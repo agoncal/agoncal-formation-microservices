@@ -29,11 +29,12 @@ public class SimulatorGeneratorApiApplication implements CommandLineRunner {
         int nbLoops = Integer.parseInt(env.getProperty("simulator.loop"));
         long sleep = Long.parseLong(env.getProperty("simulator.sleep"));
 
+        getGeneratorApiDoc();
+        getGeneratorApiSwaggerUI();
+
         for (int i = 0; i < nbLoops; i++) {
             try {
                 getGeneratorApi();
-                getGeneratorApiDoc();
-                getGeneratorApiSwaggerUI();
                 Thread.sleep(sleep);
             } catch (final Exception e) {
                 e.printStackTrace();

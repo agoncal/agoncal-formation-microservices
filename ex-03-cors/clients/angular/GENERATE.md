@@ -33,12 +33,9 @@ In `angular.json` file add :
 
 ```
 "styles": [
-  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "node_modules/bootstrap/dist/css/bootstrap.css",
   "node_modules/@fortawesome/fontawesome-free/css/all.css",
-  "src/jumbotron.css",
-  {
-    "input": "src/styles.css"
-  }
+  "src/styles.css"
 ],
 "scripts": [
   "node_modules/jquery/dist/jquery.slim.js",
@@ -52,9 +49,17 @@ In `app.module.ts` add NG Bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
   imports: [
-    NgbModule.forRoot()
+    NgbModule
   ],
 ```
+
+#### Menu
+
+Change the code in `app.component.html`
+s
+```
+ 
+``` 
 
 ### Number Generator Library
 
