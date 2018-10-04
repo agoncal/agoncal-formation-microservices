@@ -55,8 +55,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 #### Menu
 
-Change the code in `app.component.html`
-s
+Change the code in `app.component.html` and add the nav bar CSS styles under style.css
+
 ```
  
 ``` 

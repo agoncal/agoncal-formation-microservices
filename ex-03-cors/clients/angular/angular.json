@@ -149,6 +149,41 @@
           }
         }
       }
+    },
+    "generator": {
+      "root": "projects/generator",
+      "sourceRoot": "projects/generator/src",
+      "projectType": "library",
+      "prefix": "gen",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/generator/tsconfig.lib.json",
+            "project": "projects/generator/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/generator/src/test.ts",
+            "tsConfig": "projects/generator/tsconfig.spec.json",
+            "karmaConfig": "projects/generator/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/generator/tsconfig.lib.json",
+              "projects/generator/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "bookstore"
