@@ -20,3 +20,5 @@ L'API Generator genère un nombre aléatoire.
 ----
 include::{ex02dir}/services/generator-api/src/main/java/org/bookstore/generator/rest/NumberGeneratorResource.java[]
 ----
+
+== Store API
