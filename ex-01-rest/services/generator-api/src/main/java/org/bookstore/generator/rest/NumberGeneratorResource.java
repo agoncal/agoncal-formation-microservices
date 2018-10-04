@@ -25,7 +25,7 @@ public class NumberGeneratorResource {
      */
     @GetMapping(path = "/numbers", produces = MediaType.TEXT_PLAIN_VALUE)
     public ResponseEntity<String> generateNumber() {
-        log.debug("REST request to generate a number");
+        log.info("REST request to generate a number");
         String result = "BK-" + Math.random();
         return ResponseEntity.ok()
                 .body(result);
