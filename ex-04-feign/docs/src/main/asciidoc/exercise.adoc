@@ -22,3 +22,5 @@ include::{ex02dir}/services/generator-api/src/main/java/org/bookstore/generator/
 ----
 
 == Store API
+
+=== PostGres
