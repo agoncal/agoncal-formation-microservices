@@ -72,6 +72,8 @@
                         <allow-uri-read/>
                         <source-highlighter>coderay</source-highlighter>
                         <source-language>java</source-language>
+                        <ex00dir>../../../../../ex-00-ddd</ex00dir>
+                        <ex00imagedir>../../../../../ex-00-ddd/docs/src/main/asciidoc/images</ex00imagedir>
                         <ex01dir>../../../../../ex-01-rest</ex01dir>
                         <ex01imagedir>../../../../../ex-01-rest/docs/src/main/asciidoc/images</ex01imagedir>
                         <ex02dir>../../../../../ex-02-openapi</ex02dir>

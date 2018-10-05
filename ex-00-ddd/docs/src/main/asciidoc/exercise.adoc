@@ -1,2 +1,12 @@
 = Exercise 00 - DDD
 
+Dans cet exercise vous devez:
+
+* Modéliser l'architecture de l'application Book Store
+
+== Use Case
+
+L'application Book Store permet à des internautes de surfer sur le catalogue de livres, de créer un compte, de visualiser les livres les mieux noté ("Top Rated") et, eventuellement, d'acheter un ou plusieurs livres.
+
+.Use cases
+image::{ex00imagedir}/use-case.png[]

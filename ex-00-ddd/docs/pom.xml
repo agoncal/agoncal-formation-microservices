@@ -97,6 +97,15 @@
                         <version>${asciidoctorj.pdf.version}</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+                    <relativeBaseDir>true</relativeBaseDir>
+                    <attributes>
+                        <!-- Allows access to remote files (e.g. code on external GitHub) -->
+                        <allow-uri-read/>
+                        <ex00dir>../../../../../ex-00-ddd</ex00dir>
+                        <ex00imagedir>../../../../../../ex-00-ddd/docs/src/main/asciidoc/images</ex00imagedir>
+                    </attributes>
+                </configuration>
                 <executions>
                     <execution>
                         <id>output-pdf</id>
