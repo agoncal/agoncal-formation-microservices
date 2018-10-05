@@ -102,7 +102,10 @@
                     <attributes>
                         <!-- Allows access to remote files (e.g. code on external GitHub) -->
                         <allow-uri-read/>
+                        <source-highlighter>coderay</source-highlighter>
+                        <source-language>java</source-language>
                         <ex02dir>../../../../../ex-02-openapi</ex02dir>
+                        <ex02imagedir>../../../../../../ex-02-openapi/docs/src/main/asciidoc/images</ex02imagedir>
                     </attributes>
                 </configuration>
                 <executions>

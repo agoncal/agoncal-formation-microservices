@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 
+// tag::adocSnippet[]
 @Configuration
 @EnableSwagger2
 @Import(BeanValidatorPluginsConfiguration.class)
@@ -46,3 +47,4 @@ public class SwaggerConfiguration {
         );
     }
 }
+// end::adocSnippet[]

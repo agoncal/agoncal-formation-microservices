@@ -70,15 +70,26 @@
                     <attributes>
                         <!-- Allows access to remote files (e.g. code on external GitHub) -->
                         <allow-uri-read/>
+                        <source-highlighter>coderay</source-highlighter>
+                        <source-language>java</source-language>
                         <ex01dir>../../../../../ex-01-rest</ex01dir>
+                        <ex01imagedir>../../../../../ex-01-rest/docs/src/main/asciidoc/images</ex01imagedir>
                         <ex02dir>../../../../../ex-02-openapi</ex02dir>
+                        <ex02imagedir>../../../../../ex-02-openapi/docs/src/main/asciidoc/images</ex02imagedir>
                         <ex03dir>../../../../../ex-03-cors</ex03dir>
+                        <ex03imagedir>../../../../../ex-03-cors/docs/src/main/asciidoc/images</ex03imagedir>
                         <ex04dir>../../../../../ex-04-feign</ex04dir>
+                        <ex04imagedir>../../../../../ex-04-feign/docs/src/main/asciidoc/images</ex04imagedir>
                         <ex05dir>../../../../../ex-05-monitoring</ex05dir>
+                        <ex05imagedir>../../../../../ex-05-monitoring/docs/src/main/asciidoc/images</ex05imagedir>
                         <ex06dir>../../../../../ex-06-registry</ex06dir>
+                        <ex06imagedir>../../../../../ex-06-registry/docs/src/main/asciidoc/images</ex06imagedir>
                         <ex07dir>../../../../../ex-07-circuitbreaker</ex07dir>
+                        <ex07imagedir>../../../../../ex-07-circuitbreaker/docs/src/main/asciidoc/images</ex07imagedir>
                         <ex08dir>../../../../../ex-08-scale</ex08dir>
+                        <ex08imagedir>../../../../../ex-08-scale/docs/src/main/asciidoc/images</ex08imagedir>
                         <ex09dir>../../../../../ex-09-security</ex09dir>
+                        <ex09imagedir>../../../../../ex-09-security/docs/src/main/asciidoc/images</ex09imagedir>
                     </attributes>
                 </configuration>
                 <executions>

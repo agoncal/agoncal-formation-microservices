@@ -1,22 +1,80 @@
 = Exercise 02 - Open API
 
+Dans cet exercise vous devez:
+
+* Utiliser les annotations Swagger pour documenter l'API REST qui génèrant un nombre
+
 == Architecture
 
 L'API Generator est accessible via un HTTP Get
 
 .Architecture
-image::architecture.png[]
+image::{ex02imagedir}/architecture.png[]
 
 == Structure du projet
 
+```
++-- clients
+|   +-- simulator
+|   |     +-- generator-api
+|   |       +-- src
+|   |          +-- main
++-- services
+|   +-- generator-api
+|   |     +-- src
+|   |       +-- main
+|   |       +-- test
+```
+
 == Generator API
 
-L'API Generator genère un nombre aléatoire.
+=== Annotation Swagger pour documenter l'API
 
-=== Resource REST
+Rajouter les annotations Swagger `@Api` et `@ApiOperation` pour documenter l'API avec un contrat Swagger auto-généré.
 
 .NumberGeneratorResource.java
 [source,java]
 ----
-include::{ex02dir}/services/generator-api/src/main/java/org/bookstore/generator/rest/NumberGeneratorResource.java[]
+include::{ex02dir}/services/generator-api/src/main/java/org/bookstore/generator/rest/NumberGeneratorResource.java[tags=adocSnippet]
+----
+
+=== Configurer Swagger
+
+Configurer Swagger à l'aide de la classe de configuration `SwaggerConfiguration`.
+
+.SwaggerConfiguration.java
+[source,java]
+----
+include::{ex02dir}/services/generator-api/src/main/java/org/bookstore/generator/config/SwaggerConfiguration.java[tags=adocSnippet]
+----
+
+=== Builder et Tester
+
+[source,shell]
+----
+~/code/services/generator-api $ mvn clean test
+----
+
+=== Execution
+
+Executer le microservice Generator API
+
+[source,shell]
+----
+~/code/services/generator-api $ mvn spring-boot:run
+----
+
+Puis accéder à l'URL
+
+* http://localhost:8081/generator/api/numbers.
+* http://localhost:8081/generator/v2/api-docs
+* http://localhost:8081/generator/swagger-ui.html
+
+=== Simulation
+
+Executez le simulateur de charge
+
+[source,shell]
+----
+~/code/clients/simulator/generator-api $ mvn spring-boot:run
 ----

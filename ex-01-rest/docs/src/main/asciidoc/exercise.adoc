@@ -1,34 +1,31 @@
 = Exercise 01 - REST
 
+Dans cet exercise vous devez:
+
+* Créer une API REST qui génère un nombre. Ce nombre servira ensuite de clé unique identifiant un liver (n° ISBN).
+* Créer une classe de test qui viendra tester le bon fonctionnement de cette API
+* Executer un simulateur de charge
+
 == Architecture
 
 L'API Generator est accessible via un HTTP Get
 
 .Architecture
-image::architecture.png[]
+image::{ex01imagedir}/architecture.png[]
 
 == Structure du projet
 
 ```
-+-- services
-|   +-- book-api
-|   |     +-- src
-|   |       +-- main
-|   |       +-- test
-|   +-- number-api
-|   |     +-- src
-|   |       +-- main
-|   |       +-- test
 +-- clients
-|   +-- angular application
-|   +-- jax rs client to test services
-|   +-- curl commands
-+-- deployment
-|   +-- ansible scripts
-|   +-- docker config
-+-- infra
-|   +-- consul
-|   +-- elk
+|   +-- simulator
+|   |     +-- generator-api
+|   |       +-- src
+|   |          +-- main
++-- services
+|   +-- generator-api
+|   |     +-- src
+|   |       +-- main
+|   |       +-- test
 ```
 
 == Générer le projet
@@ -36,14 +33,14 @@ image::architecture.png[]
 Aller sur https://start.spring.io pour générer un projet Spring Boot. Pour avoir plus d'options, cliquez sur `Switch to the full version` puis saisissez les données suivantes :
 
 .Start Spring IO
-image::start.spring.io.png[]
+image::{ex01imagedir}/start.spring.io.png[]
 
-* Group: org.agoncal.formation.microservices.services
-* Artifact: generator-api
-* Name: generator-api
+* Group: `org.agoncal.formation.microservices.services`
+* Artifact: `generator-api`
+* Name: `generator-api`
 * Description: Generator API
-* Package Name: org.bookstore.generator
-* Packaging: jar
+* Package Name: `org.bookstore.generator`
+* Packaging: `jar`
 * Java Version: 8
 
 Dans la zone de texte `Search for dependencies` selectionnez `Web` puis cliquez sur `Generate Project`. Téléchargez puis dézippez le fichier sous le repertoire `services`.
@@ -83,24 +80,31 @@ include::{ex01dir}/services/generator-api/src/main/resources/application.yml[]
 include::{ex01dir}/services/generator-api/src/test/java/org/bookstore/generator/rest/NumberGeneratorResourceIntTest.java[tags=adocSnippet]
 ----
 
-=== Build et Test
+=== Builder et Tester
 
 [source,shell]
 ----
-$ mvn clean test
+~/code/services/generator-api $ mvn clean test
 ----
 
 === Execution
 
-Démarrer le microservices Generator API
+Executer le microservice Generator API
 
 [source,shell]
 ----
-$ mvn spring-boot:run
+~/code/services/generator-api $ mvn spring-boot:run
 ----
 
-Puis accéder à l'URL http://localhost:8081/generator/api/numbers.
+Puis accéder à l'URL
+
+* http://localhost:8081/generator/api/numbers.
 
 === Simulation
 
+Executez le simulateur de charge
 
+[source,shell]
+----
+~/code/clients/simulator/generator-api $ mvn spring-boot:run
+----
