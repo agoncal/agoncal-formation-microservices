@@ -1,12 +1,42 @@
 @startuml
+skinparam dpi 300
 
-node "pi-client-01" as piclient #grey {
-    artifact "Angular APP" <<NGINX>> as angular #white
+actor Employee
+actor User
+actor Customer
+left to right direction
+rectangle {
+    (Manage customer) as managecust
+    (Browse purchase orders) as browsepo
+    (Manage book catalog) as manageitem
+    (Manage book inventory) as manageinvent
+    (Manage book top rated) as managetoprated
+}
+rectangle {
+    (Find book) as   finditem
+    (Create an account) as createacc
+    (Browse catalog) as browsecat
+}
+rectangle {
+    (Create purchase order) as createpo
+    (Login & logout) as logg
+    (Update account) as updateacc
+    (Buy books) as buyitem
 }
 
-node "pi-grom-server-01" as piserver #orange {
-    artifact "Number API" <<Wildfly Swarm>> as numberapi #white
-}
+User -> createacc
+User -> browsecat
+User -> finditem
 
-angular -> numberapi: "     HTTP      "
+Customer -> browsecat
+Customer -> logg
+Customer -> updateacc
+Customer -> buyitem
+
+Employee -> manageinvent
+Employee -> managetoprated
+Employee -> manageitem
+Employee -> managecust
+Employee -> browsepo
+
 @enduml
