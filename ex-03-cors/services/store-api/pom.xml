@@ -54,7 +54,7 @@
 
         <!-- External Maven Plugins -->
         <liquibase.version>3.5.5</liquibase.version>
-        <openapi-codegen.version>3.3.0</openapi-codegen.version>
+        <openapi-codegen.version>3.3.2</openapi-codegen.version>
         <maven-compiler.version>3.8.0</maven-compiler.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -185,7 +185,6 @@
                             <inputSpec>${project.basedir}/src/main/resources/generator-api-docs.json</inputSpec>
                             <generatorName>spring</generatorName>
                             <library>spring-cloud</library>
-                            <templateDirectory>${project.basedir}/src/main/openapi</templateDirectory>
                             <apiPackage>org.bookstore.store.client.generator.api</apiPackage>
                             <modelPackage>org.bookstore.store.client.generator.model</modelPackage>
                             <supportingFilesToGenerate>ApiKeyRequestInterceptor.java,ClientConfiguration.java</supportingFilesToGenerate>
